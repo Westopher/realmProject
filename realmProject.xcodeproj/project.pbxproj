@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37ED8D9220841BDBA8A800EB /* Pods_realmProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F041320CEB832F31F27CE31 /* Pods_realmProject.framework */; };
+		3D537F7C22722C3B0050CFF6 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D537F7B22722C3B0050CFF6 /* Employee.swift */; };
 		3DC8B206227215E300684C10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8B205227215E300684C10 /* AppDelegate.swift */; };
 		3DC8B208227215E300684C10 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8B207227215E300684C10 /* FirstViewController.swift */; };
 		3DC8B20A227215E300684C10 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8B209227215E300684C10 /* SecondViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		1F041320CEB832F31F27CE31 /* Pods_realmProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_realmProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330FACFE3734D3CDA6D6DFA2 /* Pods-realmProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realmProject.release.xcconfig"; path = "Target Support Files/Pods-realmProject/Pods-realmProject.release.xcconfig"; sourceTree = "<group>"; };
+		3D537F7B22722C3B0050CFF6 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		3DC8B202227215E300684C10 /* realmProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = realmProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC8B205227215E300684C10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DC8B207227215E300684C10 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				3DC8B20E227215E500684C10 /* Assets.xcassets */,
 				3DC8B210227215E500684C10 /* LaunchScreen.storyboard */,
 				3DC8B213227215E500684C10 /* Info.plist */,
+				3D537F7B22722C3B0050CFF6 /* Employee.swift */,
 			);
 			path = realmProject;
 			sourceTree = "<group>";
@@ -88,7 +91,6 @@
 				BE2EA6C9E012155B83D1E59F /* Pods-realmProject.debug.xcconfig */,
 				330FACFE3734D3CDA6D6DFA2 /* Pods-realmProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -215,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC8B20A227215E300684C10 /* SecondViewController.swift in Sources */,
+				3D537F7C22722C3B0050CFF6 /* Employee.swift in Sources */,
 				3DC8B206227215E300684C10 /* AppDelegate.swift in Sources */,
 				3DC8B208227215E300684C10 /* FirstViewController.swift in Sources */,
 			);
