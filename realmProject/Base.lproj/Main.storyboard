@@ -101,7 +101,7 @@
                                         <rect key="frame" x="130" y="210" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
-                                            <action selector="addButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="CX4-Vh-ihA"/>
+                                            <action selector="addButtonPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="zs7-kF-JWJ"/>
                                         </connections>
                                     </button>
                                 </subviews>

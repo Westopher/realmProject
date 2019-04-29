@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SecondViewController: UIViewController {
 
@@ -21,19 +22,23 @@ class SecondViewController: UIViewController {
         rolePickerView.dataSource = self
         rolePickerView.delegate = self
     }
-
+    
     @IBAction func addButtonPressed(_ sender: Any) {
         var employeeObject = Employee()
         
-        guard let employeeObject.name = nameTextField.text else {
-            print("no name")
-            return
-        }
-
+        employeeObject.name = nameTextField.text!
+        
         employeeObject.role = roles[rolePickerView.selectedRow(inComponent: 0)]
         
-   }
-  
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(employeeObject)
+        }
+        
+        print("button pressed")
+   
+}
     
 }
 
