@@ -9,15 +9,19 @@
 import UIKit
 import RealmSwift
 
-
 class FirstViewController: UIViewController {
+    
+    @IBOutlet weak var segmentedController: UISegmentedControl!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var employees = [Employee]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL)
     }
-
 
 }
 

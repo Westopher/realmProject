@@ -26,7 +26,7 @@ class SecondViewController: UIViewController {
     @IBAction func addButtonPressed(_ sender: Any) {
         var employeeObject = Employee()
         
-        employeeObject.name = nameTextField.text!
+        employeeObject.name = nameTextField.text ?? "no name"
         
         employeeObject.role = roles[rolePickerView.selectedRow(inComponent: 0)]
         
