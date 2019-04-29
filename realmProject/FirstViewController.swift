@@ -11,8 +11,6 @@ import RealmSwift
 
 
 class FirstViewController: UIViewController {
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,36 +16,41 @@ class SecondViewController: UIViewController {
     
     let roles = ["Designer", "Developer"]
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         rolePickerView.dataSource = self
         rolePickerView.delegate = self
     }
 
-
     @IBAction func addButtonPressed(_ sender: Any) {
-    }
-    
+        var employeeObject = Employee()
+        
+        guard let employeeObject.name = nameTextField.text else {
+            print("no name")
+            return
+        }
+
+        employeeObject.role = roles[rolePickerView.selectedRow(inComponent: 0)]
+        
+   }
+  
     
 }
 
 
-
-extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return roles[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return roles.count
     }
     
     
 }
-
