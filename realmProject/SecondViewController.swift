@@ -23,10 +23,11 @@ class SecondViewController: UIViewController {
         rolePickerView.delegate = self
     }
     
-    var employees = Employee()
+    
     
     @IBAction func addButtonPressed(_ sender: Any) {
         
+        var employees = Employee()
         
         employees.name = nameTextField.text ?? "no name"
         
@@ -40,9 +41,9 @@ class SecondViewController: UIViewController {
         
         let results = realm.objects(Employee.self)
         
-        for r in results {
-            employees.append(r)
-        }
+//        for r in results {
+//            employees.append(r)
+//        }
         
         print("button pressed")
    

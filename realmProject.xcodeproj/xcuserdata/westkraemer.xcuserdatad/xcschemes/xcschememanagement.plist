@@ -6,11 +6,15 @@
 	<dict>
 		<key>realmProject 2.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
 		<key>realmProject.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
