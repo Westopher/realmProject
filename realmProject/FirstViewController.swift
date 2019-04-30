@@ -21,31 +21,25 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         
         let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL)
-
-        // realm object (just get one thing from the database)
-//        let e = realm.object(ofType: Employee.self, forPrimaryKey: "53546b12-44e9-452d-89d4-3cd8c8c097c0")
-//        if let e = e {
-//            employees.append(e)
-//            }
-//        tableView.reloadData()
-//    }
-        //realm objectS (get things or a thing by filtering)
         let results = realm.objects(Employee.self)
-        for r in results {
-            employees.append(r)
-        }
+        employees = results
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+       
     }
 }
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return employees.count
+        return employees == nil ? 0 : employees!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "employeeCell", for: indexPath)
-        cell.textLabel?.text = employees[indexPath.row].name
+            if employees != nil {
+                cell.textLabel?.text = employees?[indexPath.row].name
+            }
+        
         
         return cell
     }
