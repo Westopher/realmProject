@@ -24,8 +24,10 @@ class FirstViewController: UIViewController {
         segmentedController.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
         retrieveEmployees(role: "")
         print(Realm.Configuration.defaultConfiguration.fileURL)
+    }
+    
        
-        @objc func segmentChanged() {
+    @objc func segmentChanged() {
             switch segmentedController.selectedSegmentIndex  {
             case 0:
                 retrieveEmployees(role: "")
@@ -49,9 +51,8 @@ class FirstViewController: UIViewController {
             }
             
             tableView.reloadData()
-    }
         
-}
+        }
 }
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {

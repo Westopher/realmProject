@@ -46,6 +46,7 @@ class SecondViewController: UIViewController {
 //        }
         
         print("button pressed")
+        tableView.reloadData()
    
 }
     
