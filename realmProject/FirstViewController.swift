@@ -20,12 +20,35 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //configure segmented control
+       // segmentedController.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        
+        
+        
         let realm = try! Realm()
         let results = realm.objects(Employee.self)
         employees = results
         
         print(Realm.Configuration.defaultConfiguration.fileURL)
        
+//        @objc func segmentChanged() {
+//            switch  {
+//            case 0:
+//
+//            case 1:
+//
+//            case 2:
+//            default:
+//
+//            }
+//        }
+        
+        func retrieveEmployees(role: String) {
+            let realm = try! Realm()
+            employees = realm.objects(Employee.self).filter("role = %@", role)
+            tableView.reloadData()
+        }
+        
     }
 }
 
