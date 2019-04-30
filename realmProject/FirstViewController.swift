@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
         
         //configure segmented control
         segmentedController.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
-        retreiveEmployees(role: "")
+        retrieveEmployees(role: "")
         print(Realm.Configuration.defaultConfiguration.fileURL)
        
         @objc func segmentChanged() {
