@@ -15,7 +15,7 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var employees = [Employee]()
+    var employees:Results<Employee>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +31,10 @@ class FirstViewController: UIViewController {
 //        tableView.reloadData()
 //    }
         //realm objectS (get things or a thing by filtering)
-        let e = realm.objects(<#T##type: Element.Type##Element.Type#>)
-    
+        let results = realm.objects(Employee.self)
+        for r in results {
+            employees.append(r)
+        }
     }
 }
 
