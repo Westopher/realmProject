@@ -21,35 +21,37 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         
         //configure segmented control
-       // segmentedController.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
-        
-        
-        
-        let realm = try! Realm()
-        let results = realm.objects(Employee.self)
-        employees = results
-        
+        segmentedController.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        retreiveEmployees(role: "")
         print(Realm.Configuration.defaultConfiguration.fileURL)
        
-//        @objc func segmentChanged() {
-//            switch  {
-//            case 0:
-//
-//            case 1:
-//
-//            case 2:
-//            default:
-//
-//            }
-//        }
+        @objc func segmentChanged() {
+            switch segmentedController.selectedSegmentIndex  {
+            case 0:
+                retrieveEmployees(role: "")
+            case 1:
+                retrieveEmployees(role: "Designer")
+            case 2:
+                retrieveEmployees(role: "Developer")
+            default:
+                retrieveEmployees(role: "")
+            }
+        }
         
         func retrieveEmployees(role: String) {
             let realm = try! Realm()
+            
+                if role == "" {
+                employees = realm.objects(Employee.self)
+            }
+                else {
             employees = realm.objects(Employee.self).filter("role = %@", role)
+            }
+            
             tableView.reloadData()
-        }
-        
     }
+        
+}
 }
 
 extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
