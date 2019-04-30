@@ -23,17 +23,25 @@ class SecondViewController: UIViewController {
         rolePickerView.delegate = self
     }
     
+    var employees = Employee()
+    
     @IBAction func addButtonPressed(_ sender: Any) {
-        var e = Employee()
         
-        e.name = nameTextField.text ?? "no name"
         
-        e.role = roles[rolePickerView.selectedRow(inComponent: 0)]
+        employees.name = nameTextField.text ?? "no name"
+        
+        employees.role = roles[rolePickerView.selectedRow(inComponent: 0)]
         
         let realm = try! Realm()
         
         try! realm.write {
-            realm.add(e)
+            realm.add(employees)
+        }
+        
+        let results = realm.objects(Employee.self)
+        
+        for r in results {
+            employees.append(r)
         }
         
         print("button pressed")
